@@ -9,9 +9,12 @@ class Fortune(MycroftSkill):
         self.learning = True
 
     @intent_file_handler('fortune.intent')
-
     def handle_fortune_intent(self, message):
-        fortune = subprocess.check_output(["fortune"])
+        specific = message.data.get('specific', None)
+        if specific is None:
+            fortune = subprocess.check_output(["fortune"])
+        else:
+            fortune = subprocess.check_output(["fortune", specific])
         for line in fortune.strip().decode().splitlines():
             self.speak_dialog(line)
 
