@@ -14,7 +14,7 @@ class Fortune(MycroftSkill):
         if specific is None:
             fortune = subprocess.check_output(["fortune"])
         else:
-            fortune = subprocess.check_output(["fortune", specific])
+            fortune = subprocess.check_output(["fortune", specific.replace(' ', '-')])
         for line in fortune.strip().decode().splitlines():
             self.speak_dialog(line)
 
