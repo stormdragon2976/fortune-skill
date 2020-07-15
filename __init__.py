@@ -13,7 +13,7 @@ class Fortune(MycroftSkill):
     def handle_fortune_intent(self, message):
         fortune = subprocess.check_output(["fortune"])
         for line in fortune.strip().decode().splitlines():
-            self.speak_dialog('fortune')
+            self.speak_dialog(line)
 
 
 def create_skill():
