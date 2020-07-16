@@ -23,8 +23,12 @@ class Fortune(MycroftSkill):
 
     @intent_file_handler('listfortunes.intent')
     def handle_listfortunes_intent(self, message):
+        fortuneList = ""
         for i in glob.glob("/usr/share/fortune/*.dat"):
-            self.speak_dialog(pathlib.Path(i).stem)
+            fortuneList += pathlib.Path(i).stem + ", "
+        fortuneList = fortuneList[:-2]
+        fortuneList = ', and '.join(fortuneList.rsplit(', ', 1))
+        self.speak_dialog(fortuneList)
 
 
 def create_skill():
