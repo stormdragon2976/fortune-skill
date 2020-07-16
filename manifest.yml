@@ -1,0 +1,5 @@
+system:
+    all: fortune-mod
+
+exes:
+    - fortune
