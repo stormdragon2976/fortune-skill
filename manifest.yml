@@ -1,4 +1,4 @@
-dependancies:
+dependencies:
     system:
         all: fortune-mod
 
