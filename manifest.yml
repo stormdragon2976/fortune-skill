@@ -1,5 +1,6 @@
-system:
-    all: fortune-mod
+dependancies:
+    system:
+        all: fortune-mod
 
-exes:
-    - fortune
+    exes:
+        - fortune
