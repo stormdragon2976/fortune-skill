@@ -6,7 +6,7 @@ Reads from fortune-mod. you can let it pick one at random, or specify the kind y
 
 ## Examples
 * "Give me a fortune"
-* "Give me a funny fortune"
+* "Tell me a Linux fortune"
 
 ## Credits
 Storm Dragon
