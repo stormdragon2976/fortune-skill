@@ -16,7 +16,11 @@ class Fortune(MycroftSkill):
         if specific is None:
             fortune = subprocess.check_output(["fortune"])
         else:
-            fortune = subprocess.check_output(["fortune", specific.replace(' ', '-')])
+            try:
+                fortune = subprocess.check_output(["fortune", specific.replace(' ', '-')])
+            except:
+                self.speak_dialog("No " + specific + " fortunes found.")
+                return
         for line in fortune.strip().decode().splitlines():
             self.speak_dialog(line)
 
